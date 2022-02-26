@@ -2,6 +2,7 @@ package com.example.intent_20220226
 
 import android.app.Activity
 import android.content.Intent
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import kotlinx.android.synthetic.main.activity_main.*
@@ -41,6 +42,18 @@ class MainActivity : AppCompatActivity() {
             val myIntent = Intent(this,EditNicknameActivity::class.java)
             startActivityForResult(myIntent, REQ_CODE_NICKNAME) // 1000 번은 닉네임을 변경하러 간다는 의미로 사용
 
+
+        }
+
+        btnDial.setOnClickListener {
+
+            val inputPhoneNum = edtPhontNum.text.toString()
+
+            val myUri = Uri.parse("tel:${inputPhoneNum}") // 어디에 전화를 걸지 정보 가공. 띄어쓰기 없이
+
+//            전화 앱으로 화면 전환
+            val myIntent = Intent(Intent.ACTION_DIAL,myUri)
+            startActivity(myIntent)
 
         }
     }
