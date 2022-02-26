@@ -15,4 +15,14 @@
         android:layout_height="wrap_content"
         android:text="다른 화면으로 이동하기"/>
 
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="보낼 메시지 입력"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="메시지 보내기"/>
+
 </LinearLayout>
